@@ -4,7 +4,7 @@
     variables = {
       VISUAL = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      TERMINAL = "alacritty";
     };
 
     etc."xdg/mimeapps.list" = {
@@ -75,7 +75,7 @@
       conky
       xdotool
       seturgent
-      kitty
+      alacritty
       xclip
       rofi
       libnotify

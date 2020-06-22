@@ -34,9 +34,9 @@
     config = ''
       Section "InputClass"
         Identifier "Mouse"
-	Driver "libinput"
-	MatchIsPointer "on"
-	Option "AccelProfile" "adaptive"
+        Driver "libinput"
+        MatchIsPointer "on"
+        Option "AccelProfile" "adaptive"
       EndSection
     '';
 
@@ -53,16 +53,16 @@
 
       greeters.enso = {
         enable = true;
-	blur = false;
+        blur = false;
 
-	iconTheme = {
-	  name = "ePapirus";
-	  package = pkgs.papirus-icon-theme;
+        iconTheme = {
+          name = "ePapirus";
+          package = pkgs.papirus-icon-theme;
+              };
+        cursorTheme = {
+          name = "Vanilla-DMZ";
+          package = pkgs.vanilla-dmz;
         };
-	cursorTheme = {
-	  name = "Vanilla-DMZ";
-	  package = pkgs.vanilla-dmz;
-	};
       };
     };
 
