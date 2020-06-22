@@ -33,6 +33,8 @@
       ../modules/packages/firefox.nix
 
       ../modules/hardware/sound.nix
+      ../modules/hardware/printer.nix
+      ../modules/hardware/power-management.nix
 
       ../modules/net/firewall-desktop.nix
       ../modules/net/sshd.nix
