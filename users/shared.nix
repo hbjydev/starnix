@@ -35,33 +35,35 @@
     users.${vars.user} = {
       programs.git = {
         enable = true;
-	extraConfig = {
-	  "push" = { default = "current"; };
-	  "rerere" = { enabled = 1; };
-	  "core" = {
-	    excludesfile = "~/.gitignore";
-	    pager = ''
+        extraConfig = {
+          "push" = { default = "current"; };
+          "rerere" = { enabled = 1; };
+          "core" = {
+            excludesfile = "~/.gitignore";
+            pager = ''
               delta --plus-color="#16271C" --minus-color="#331F21" --theme='ansi-dark'
-	    '';
-	  };
-	  "interactive" = {
-	    diffFilter = "delta --color-only";
-	  };
-	};
+            '';
+          };
+          "interactive" = {
+            diffFilter = "delta --color-only";
+          };
+        };
 
-	aliases = {
+        aliases = {
           lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an%>%Creset' --abbrev-commit";
-	  pp = "!git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)";
-	  recent-branches = "branch --sort=-committerdate";
-	};
+          pp = "!git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)";
+          recent-branches = "branch --sort=-committerdate";
+        };
       };
 
       home.file.".icons/default/index.theme".text = ''
         [Icon Theme]
-	Name=Default
-	Comment=Default Cursor Theme
-	Inherits=Vanilla-DMZ
+        Name=Default
+        Comment=Default Cursor Theme
+        Inherits=Vanilla-DMZ
       '';
+
+      home.file.".config/alacritty/alacritty.yml".source = ../home/.config/alacritty/alacritty.yml;
     };
   };
 }
