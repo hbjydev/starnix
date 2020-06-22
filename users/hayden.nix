@@ -23,7 +23,7 @@
     users.${vars.user} = {
       programs.git = {
         userName = "Hayden Young";
-	userEmail = "hayden@itshayden.dev";
+        userEmail = "hayden@itshayden.dev";
       };
 
       home.file.".wallpaper".source = ../assets/wallpapers/main.png;
