@@ -56,6 +56,7 @@ Plug 'ksevelyar/joker.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'spwhitt/vim-nix'
 
 call plug#end()
 
