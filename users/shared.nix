@@ -5,6 +5,12 @@
       (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
     ];
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+
   users.users.${vars.user} = {
     uid = 1000;
     isNormalUser = true;
