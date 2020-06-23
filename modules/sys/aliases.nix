@@ -33,7 +33,7 @@
     grab-display = "export DISPLAY = ':0.0'";
 
     e = "sudo nvim /etc/nixos/configuration.nix";
-    refresh = "id-refresh-channels";
+    refresh = "hd-refresh-channels";
     b = "sudo nixos-rebuild switch --keep-going";
     br = "b && xmonad --restart";
     bu = "refresh && b";

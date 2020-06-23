@@ -10,24 +10,24 @@
       antialias = true;
       defaultFonts = {
         monospace = [ "Terminus" ];
-	sansSerif = [ "Inter" ];
-	serif = [ "Roboto Slab" ];
+	      sansSerif = [ "Inter" ];
+	      serif = [ "Roboto Slab" ];
       };
     };
 
     fonts = with pkgs;
       [
         terminus_font
-	unifont
-	noto-fonts-emoji
-	corefonts
+        unifont
+        noto-fonts-emoji
+        corefonts
 
-	siji
+        siji
 
-	open-sans
-	roboto
-	roboto-slab
-	roboto-mono
+        open-sans
+        roboto
+        roboto-slab
+        roboto-mono
       ];
   };
 

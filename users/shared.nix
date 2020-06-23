@@ -70,6 +70,12 @@
       '';
 
       home.file.".config/alacritty/alacritty.yml".source = ../home/.config/alacritty/alacritty.yml;
+      home.file.".config/rofi/config.rasi".source = ../home/.config/rofi/config.rasi;
+      home.file.".config/rofi/theme.rasi".source = ../home/.config/rofi/theme.rasi;
+      home.file.".config/dunstrc".source = ../home/.config/dunstrc;
+      home.file.".config/polybar/config".source = ../home/.config/polybar/config;
+      home.file.".config/polybar/launch.sh".source = ../home/.config/polybar/launch.sh;
+      home.file.".fehbg".source = ../home/.fehbg;
     };
   };
 }

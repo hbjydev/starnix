@@ -19,9 +19,12 @@
       ../modules/boot/grub.nix
 
       ../modules/services/common.nix
+      ../modules/services/avahi.nix
+      ../modules/services/keybase.nix
       ../modules/services/x.nix
 
       ../modules/x/gnome3.nix
+      ../modules/x/bspwm.nix
       ../modules/x/fonts.nix
       ../modules/packages/x-common.nix
       ../modules/packages/x-extra.nix
@@ -31,6 +34,7 @@
       ../modules/packages/dev.nix
       ../modules/packages/neovim.nix
       ../modules/packages/firefox.nix
+      ../modules/packages/gnupg.nix
 
       ../modules/hardware/sound.nix
       ../modules/hardware/printer.nix

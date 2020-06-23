@@ -66,6 +66,8 @@
 
   console.useXkbConfig = true;
 
+  services.gnome3.gnome-keyring.enable = true;
+
   environment.systemPackages = with pkgs;
     [
       xxkb
@@ -80,6 +82,7 @@
       rofi
       libnotify
       dunst
+      polybar
       nix-du
 
       glxinfo
