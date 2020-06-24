@@ -53,4 +53,6 @@
       sshfsFuse
       rsync
     ];
+
+    services.udev.packages = [ pkgs.libu2f-host ];
 }

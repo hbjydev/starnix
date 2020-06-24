@@ -11,6 +11,7 @@
         honey
         https-everywhere
         reddit-enhancement-suite
+        browserpass
       ];
 
       programs.firefox.profiles =

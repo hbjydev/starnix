@@ -13,5 +13,8 @@
 
       # dev
       asciinema
+
+      # irc
+      weechat
     ];
 }

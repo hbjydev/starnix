@@ -35,6 +35,7 @@
       ../modules/packages/neovim.nix
       ../modules/packages/firefox.nix
       ../modules/packages/gnupg.nix
+      ../modules/packages/pass.nix
 
       ../modules/hardware/sound.nix
       ../modules/hardware/printer.nix
