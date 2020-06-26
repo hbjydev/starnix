@@ -24,9 +24,9 @@
 
         siji
 
-        (nerdfonts.override { fonts = [
-          "Terminus"
-        ]; })
+#        (nerdfonts.override { fonts = [
+#          "Terminus"
+#        ]; })
 
         inter
         open-sans

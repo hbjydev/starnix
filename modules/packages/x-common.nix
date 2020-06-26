@@ -7,6 +7,16 @@
       TERMINAL = "alacritty";
     };
 
+    etc."xdg/gtk-3.0/settings.ini" = {
+      text = ''
+        [Settings]
+        gtk-theme-name=Ant-Dracula
+        gtk-icon-theme-name=Papirus-Dark-Maia
+        gtk-font-name=Terminess Nerd Font Mono 14
+        gtk-cursor-theme-name=Vanilla-DMZ
+      '';
+    };
+
     etc."xdg/mimeapps.list" = {
       text = ''
         [Default Applications]
@@ -96,5 +106,7 @@
       discord
       teams
       riot-desktop
+
+      # ant-dracula-theme
     ];
 }

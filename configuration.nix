@@ -1,1 +1,1 @@
-/etc/nixos/hosts/itshaydenlpt.nix
+/etc/nixos/hosts/itshaydencmp.nix
