@@ -15,7 +15,7 @@
     sort = yes
     idle_threshold = 999
 
-    font = Monospace 9
+    font = monospace 9
     line_height = 3
     markup = full
     format = "<b>%a</b>\n<i>%s</i> \n%b"

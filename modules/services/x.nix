@@ -47,23 +47,8 @@
       Option "OffTime" "0"
     '';
 
-    displayManager.lightdm = {
+    displayManager.gdm = {
       enable = true;
-      background = "/etc/nixos/assets/displayManager.png";
-
-      greeters.enso = {
-        enable = true;
-        blur = false;
-
-        iconTheme = {
-          name = "ePapirus";
-          package = pkgs.papirus-icon-theme;
-              };
-        cursorTheme = {
-          name = "Vanilla-DMZ";
-          package = pkgs.vanilla-dmz;
-        };
-      };
     };
 
     layout = "gb";

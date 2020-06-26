@@ -10,6 +10,7 @@
 
       # media
       ffmpeg
+      flameshot
 
       # dev
       asciinema

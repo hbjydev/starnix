@@ -9,7 +9,7 @@
       hinting.enable = true;
       antialias = true;
       defaultFonts = {
-        monospace = [ "Terminus" ];
+        monospace = [ "TerminessTTF Nerd Font Mono" ];
 	      sansSerif = [ "Inter" ];
 	      serif = [ "Roboto Slab" ];
       };
@@ -24,6 +24,11 @@
 
         siji
 
+        (nerdfonts.override { fonts = [
+          "Terminus"
+        ]; })
+
+        inter
         open-sans
         roboto
         roboto-slab

@@ -11,6 +11,7 @@
   networking.extraHosts =
     ''
       127.0.0.1 dev.lcl
+      127.0.0.1 intranet.dev
     '';
 
   systemd.tmpfiles.rules =

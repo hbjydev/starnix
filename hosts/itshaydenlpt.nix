@@ -25,6 +25,7 @@
 
       ../modules/x/gnome3.nix
       ../modules/x/bspwm.nix
+      ../modules/x/xmonad.nix
       ../modules/x/fonts.nix
       ../modules/packages/x-common.nix
       ../modules/packages/x-extra.nix
@@ -49,6 +50,7 @@
     ];
 
     boot.loader.grub.backgroundColor = lib.mkForce "#09090B";
+    boot.plymouth.enable = true;
 
     networking.hostName = "itshaydenlpt";
     networking.firewall.enable = lib.mkForce true;
