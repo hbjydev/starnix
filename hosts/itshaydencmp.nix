@@ -24,6 +24,7 @@
       ../modules/services/x.nix
 
       ../modules/x/xmonad.nix
+      ../modules/x/gnome3.nix
       ../modules/x/fonts.nix
       ../modules/packages/x-common.nix
       ../modules/packages/x-extra.nix

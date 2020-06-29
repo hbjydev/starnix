@@ -9,6 +9,8 @@ import System.Exit (exitSuccess)
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.XPropManage
 
 -- Utilities -------------------------------------------------------------------
 import XMonad.Util.EZConfig (additionalKeysP)
@@ -95,8 +97,18 @@ myStartupHook = do
 
 -- Manage Hook -----------------------------------------------------------------
 
+checkDialog :: Query Bool
+checkDialog = ask >>= \w -> liftX $ do
+                a <- getAtom "_NET_WM_WINDOW_TYPE"
+                dialog <- getAtom "_NET_WM_WINDOW_TYPE_DIALOG"
+                mbr <- getProp a w
+                case mbr of
+                  Just [r] -> return $elem (fromIntegral r) [dialog]
+                  _ -> return False
+
 myManageHook = composeAll
-  [ className =? "Pavucontrol" --> doFloat
+  [ checkDialog --> doCenterFloat
+  , className =? "Pavucontrol" --> doFloat
   , manageDocks
   ]
 

@@ -1,18 +1,24 @@
 { config, pkgs, lib, ... }:
+let
+  unstable = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
+in
 {
   environment = {
     variables = {
       VISUAL = "nvim";
-      BROWSER = "firefox";
+      BROWSER = "chromium";
       TERMINAL = "alacritty";
     };
 
-    etc."xdg/gtk-3.0/settings.ini" = {
+    etc."gtk-3.0/settings.ini" = {
       text = ''
         [Settings]
         gtk-theme-name=Ant-Dracula
         gtk-icon-theme-name=Papirus-Dark-Maia
-        gtk-font-name=Terminess Nerd Font Mono 14
+        gtk-font-name=Roboto 16
         gtk-cursor-theme-name=Vanilla-DMZ
       '';
     };
@@ -24,20 +30,20 @@
         application/json=nvim.desktop;
         text/plain=nvim.desktop;
         inode/directory=spacefm.desktop
-        x-scheme-handler/http=firefox.desktop
-        x-scheme-handler/https=firefox.desktop
-        x-scheme-handler/ftp=firefox.desktop
-        x-scheme-handler/chrome=firefox.desktop
-        text/html=firefox.desktop
-        application/x-extension-htm=firefox.desktop
-        application/x-extension-html=firefox.desktop
-        application/x-extension-shtml=firefox.desktop
-        application/xhtml+xml=firefox.desktop
-        application/x-extension-xhtml=firefox.desktop
-        application/x-extension-xht=firefox.desktop
+        x-scheme-handler/http=chromium.desktop
+        x-scheme-handler/https=chromium.desktop
+        x-scheme-handler/ftp=chromium.desktop
+        x-scheme-handler/chrome=chromium.desktop
+        text/html=chromium.desktop
+        application/x-extension-htm=chromium.desktop
+        application/x-extension-html=chromium.desktop
+        application/x-extension-shtml=chromium.desktop
+        application/xhtml+xml=chromium.desktop
+        application/x-extension-xhtml=chromium.desktop
+        application/x-extension-xht=chromium.desktop
         x-scheme-handler/magnet=userapp-transmission-gtk-DXP9G0.desktop
-        x-scheme-handler/about=firefox.desktop
-        x-scheme-handler/unknown=firefox.desktop
+        x-scheme-handler/about=chromium.desktop
+        x-scheme-handler/unknown=chromium.desktop
         video/x-matroska=mpv.desktop;
         video/mpeg=mpv.desktop;
         image/gif=nomacs.desktop;
@@ -50,17 +56,17 @@
         application/json=nvim.desktop;
         text/markdown=nvim.desktop;
         text/plain=nvim.desktop;
-        x-scheme-handler/http=firefox.desktop;
-        x-scheme-handler/https=firefox.desktop;
-        x-scheme-handler/ftp=firefox.desktop;
-        x-scheme-handler/chrome=firefox.desktop;
-        text/html=firefox.desktop;
-        application/x-extension-htm=firefox.desktop;
-        application/x-extension-html=firefox.desktop;
-        application/x-extension-shtml=firefox.desktop;
-        application/xhtml+xml=firefox.desktop;
-        application/x-extension-xhtml=firefox.desktop;
-        application/x-extension-xht=firefox.desktop;
+        x-scheme-handler/http=chromium.desktop;
+        x-scheme-handler/https=chromium.desktop;
+        x-scheme-handler/ftp=chromium.desktop;
+        x-scheme-handler/chrome=chromium.desktop;
+        text/html=chromium.desktop;
+        application/x-extension-htm=chromium.desktop;
+        application/x-extension-html=chromium.desktop;
+        application/x-extension-shtml=chromium.desktop;
+        application/xhtml+xml=chromium.desktop;
+        application/x-extension-xhtml=chromium.desktop;
+        application/x-extension-xht=chromium.desktop;
         x-scheme-handler/magnet=userapp-transmission-gtk-DXP9G0.desktop;
         application/pdf=org.gnome.Evince.desktop;
         image/jpeg=nomacs.desktop;imv.desktop;
@@ -100,6 +106,8 @@
       spotify
       mpv
       vlc
+
+      chromium
       
       arandr
 
@@ -107,6 +115,6 @@
       teams
       riot-desktop
 
-      # ant-dracula-theme
+      unstable.ant-dracula-theme
     ];
 }
