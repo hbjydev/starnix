@@ -11,6 +11,7 @@ in
       VISUAL = "nvim";
       BROWSER = "chromium";
       TERMINAL = "alacritty";
+      GTK_THEME = "Ant-Dracula";
     };
 
     etc."gtk-3.0/settings.ini" = {

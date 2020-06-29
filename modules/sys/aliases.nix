@@ -16,6 +16,10 @@
     ns = "notify-send";
 
     g = "git";
+
+    ga = "git add";
+    gau = "git add -u";
+
     gco = "git checkout";
     gc = "git commit --message";
     gca = "git commit --all --message";

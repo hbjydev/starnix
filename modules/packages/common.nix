@@ -16,6 +16,7 @@
       curl
       aria2
       imagemagick
+      bat
 
       # monitoring
       bandwhich

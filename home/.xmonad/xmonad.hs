@@ -16,7 +16,13 @@ import XMonad.Hooks.XPropManage
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Scratchpad
 import XMonad.Config.Desktop
+
+import Foreign.C.Types (CLong)
+import Graphics.X11.Xlib.Extras
+
+import qualified XMonad.StackSet as W
 
 -- Config Vars -----------------------------------------------------------------
 
@@ -97,6 +103,9 @@ myStartupHook = do
 
 -- Manage Hook -----------------------------------------------------------------
 
+getProp :: Atom -> Window -> X (Maybe [CLong])
+getProp a w = withDisplay $ \dpy -> io $ getWindowProperty32 dpy a w
+
 checkDialog :: Query Bool
 checkDialog = ask >>= \w -> liftX $ do
                 a <- getAtom "_NET_WM_WINDOW_TYPE"
@@ -106,16 +115,26 @@ checkDialog = ask >>= \w -> liftX $ do
                   Just [r] -> return $elem (fromIntegral r) [dialog]
                   _ -> return False
 
+myManageHook :: ManageHook
 myManageHook = composeAll
   [ checkDialog --> doCenterFloat
   , className =? "Pavucontrol" --> doFloat
   , manageDocks
   ]
 
+manageScratchpad :: ManageHook
+manageScratchpad = scratchpadManageHook (W.RationalRect l t w h)
+  where
+    h = 0.2     -- terminal height, 10%
+    w = 1       -- terminal width, 100%
+    t = 1 - h   -- distance from top edge, 90%
+    l = 1 - w   -- distance from left edge, 0%
+
 -- Keybinds --------------------------------------------------------------------
 
 spotDbusSend :: String
-spotDbusSend = "dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify org.mpris.MediaPlayer2.Player."
+spotDbusSend = ("qdbus org.mpris.MediaPlayer2.spotify" ++
+  "/org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.")
 
 myKeys :: [(String, X ())]
 myKeys =
@@ -140,7 +159,12 @@ myKeys =
   , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
   , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
   , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
+
+  -- Scratchpads
+  , ("M-C-1", scratchPad)
   ]
+  where
+    scratchPad = scratchpadSpawnActionTerminal myTerminal
 
 -- Entrypoint ------------------------------------------------------------------
 

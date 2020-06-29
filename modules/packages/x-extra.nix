@@ -17,5 +17,8 @@
 
       # irc
       weechat
+
+      # util
+      qt4
     ];
 }

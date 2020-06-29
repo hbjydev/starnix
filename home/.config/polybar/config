@@ -79,7 +79,7 @@ modules-right = date
 inherit = bar/base
 bottom = true
 
-modules-left = ewmh
+modules-left = workspaces-xmonad
 modules-center = title
 modules-right = date
 
