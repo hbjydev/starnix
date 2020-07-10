@@ -16,5 +16,7 @@
       # Misc.
       insomnia # api testing
       mkcert # SSL cert generation
+      jetbrains.datagrip
+      mariadb-client
     ];
 }

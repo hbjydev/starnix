@@ -12,6 +12,7 @@ in
       BROWSER = "chromium";
       TERMINAL = "alacritty";
       GTK_THEME = "Ant-Dracula";
+      _JAVA_AWT_WM_NONREPARENTING = "1";
     };
 
     etc."gtk-3.0/settings.ini" = {

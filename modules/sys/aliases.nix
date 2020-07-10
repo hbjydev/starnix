@@ -5,6 +5,8 @@
     log = "sudo journalctl --output cat -u";
     log-previous-boot = "sudo journalctl --boot=-1";
 
+    da = "composer dumpautoload";
+
     ports = "sudo lsof -Pni";
     pgrep = "pgrep --full";
     pkill = "pkill --full";

@@ -61,11 +61,11 @@ Plug 'spwhitt/vim-nix'
 call plug#end()
 
 " Theming, because Vim's default theme makes me regurgitate my noonly meal
-colorscheme joker
+colorscheme starlight
 hi Normal guibg=NONE ctermbg=NONE
 
 let g:lightline = {}
-let g:lightline.colorscheme='joker'
+let g:lightline.colorscheme='starlight'
 let g:lightline.active = {}
 let g:lightline.active.left = [ [ 'mode' ], [], [ 'cocstatus' ] ]
 let g:lightline.active.right = [ [ 'readonly', 'filename' ], [], [ 'gitbranch' ] ]

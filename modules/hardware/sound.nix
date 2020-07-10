@@ -6,7 +6,8 @@
     pulseaudio = {
       enable = true;
       package = pkgs.pulseaudioFull;
-      extraConfig = "load-module module-switch-on-connect";
+      extraConfig = "load-module module-switch-on-connect
+                     load-module module-role-cork";
     };
   };
 

@@ -23,6 +23,9 @@
       ../modules/services/keybase.nix
       ../modules/services/x.nix
 
+      ../modules/hardware/sound.nix
+      ../modules/hardware/printer.nix
+
       ../modules/x/xmonad.nix
       ../modules/x/gnome3.nix
       ../modules/x/fonts.nix
@@ -36,10 +39,7 @@
       ../modules/packages/firefox.nix
       ../modules/packages/gnupg.nix
       ../modules/packages/pass.nix
-
-      ../modules/hardware/sound.nix
-      ../modules/hardware/printer.nix
-
+      
       ../modules/net/firewall-desktop.nix
       ../modules/net/sshd.nix
 
@@ -47,7 +47,7 @@
       ../modules/vm/hypervisor.nix
     ];
 
-    boot.loader.grub.backgroundColor = lib.mkForce "#09090B";
+    boot.loader.grub.backgroundColor = lib.mkForce "#161c1f";
     boot.plymouth.enable = true;
 
     networking.hostName = "itshaydencmp";

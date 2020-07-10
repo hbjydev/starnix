@@ -8,24 +8,21 @@ screenchange-reload = true
 ################################################################################
 
 [colors]
-background = #d0303030
-background-transparent = #00303030
+background = #161c1f30
+background-transparent = #001c1f30
 background-alt = #0f0f0f
 background-alt-2 = #ff5fafcf
-foreground = #BEB3CD
-foreground-alt = #c1c2c3
-red = #fb4934
-green = #b8bb26
-yellow = #fabd2f
-blue = #83a598
-purple = #d3869b
-aqua = #8ec07c
-orange = #fe8019
-white = #dddddd
-blue_arch = #83afe1
-grey = #5b51c9
-grey1 = #5bb1c9
-grey2 = #5bf1c9
+foreground = #C0C0C0
+foreground-alt = #808080
+red = #EFA6A2
+green = #5ACCAF
+yellow = #E0AF85
+blue = #A3B8EF
+purple = #CCACED
+aqua = #74C3E4
+orange = #E0AF85
+white = #C0C0C0
+grey = #808080
 
 ################################################################################
 
@@ -143,7 +140,7 @@ interval = 2
 mount-0 = /
 mount-1 = /home
 
-label-mounted = %{F#9c71C7}%mountpoint%%{F-} %free%
+label-mounted = %{F#CCACED}%mountpoint%%{F-} %free%
 label-unmounted =
 label-unmounted-foreground = ${colors.foreground}
 
@@ -156,15 +153,15 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = %{F#9c71C7}%{F-} <label-charging>
-format-discharging = %{F#9c71C7}%{F-} <label-discharging>
+format-charging = %{F#CCACED}%{F-} <label-charging>
+format-discharging = %{F#CCACED}%{F-} <label-discharging>
 
 ################################################################################
 
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix = "  %{F#9c71C7}%{F-}"
+format-prefix = "  %{F#CCACED}%{F-}"
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.grey}
 label = %percentage:3%%
@@ -174,7 +171,7 @@ label = %percentage:3%%
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = "%{F#9c71C7}%{F-}"
+format-prefix = "%{F#CCACED}%{F-}"
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.grey}
 label = %percentage_used:3%%

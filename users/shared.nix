@@ -76,6 +76,8 @@
       home.file.".config/polybar/config".source = ../home/.config/polybar/config;
       home.file.".config/polybar/launch.sh".source = ../home/.config/polybar/launch.sh;
       home.file.".fehbg".source = ../home/.fehbg;
+      home.file.".config/nvim/colors/starlight.vim".source = ../home/.config/nvim/colors/starlight.vim;
+      home.file.".local/share/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/starlight.vim".source = ../home/.local/share/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/starlight.vim;
     };
   };
 }

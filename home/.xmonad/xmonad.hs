@@ -1,8 +1,6 @@
--- Imports ---------------------------------------------------------------------
---------------------------------------------------------------------------------
-
 -- Core ------------------------------------------------------------------------
 import XMonad -- core libraries
+import XMonad.Config.Desktop
 import System.Exit (exitSuccess)
 
 -- Hooks -----------------------------------------------------------------------
@@ -11,13 +9,13 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.XPropManage
+import XMonad.ManageHook
 
 -- Utilities -------------------------------------------------------------------
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe)
 import XMonad.Util.SpawnOnce
-import XMonad.Util.Scratchpad
-import XMonad.Config.Desktop
+import XMonad.Util.NamedScratchpad
 
 import Foreign.C.Types (CLong)
 import Graphics.X11.Xlib.Extras
@@ -35,13 +33,17 @@ myWorkspaces =
     "4:dv3", "5:sys", "6:ct1",
     "7:ct2", "8:mus", "9:msc",
     "0:ms2", "-",     "="     
+
+    , "dev1", "dev2", "dev3", "dev4", "dev5"
+    , "dev6", "dev7", "dev8", "dev9", "dev10"
+
   ]
 
 myModMask :: KeyMask
 myModMask = mod4Mask
 
 myBrowser :: String
-myBrowser = "firefox"
+myBrowser = "chromium"
 
 myLauncher :: String
 myLauncher = "rofi -show drun -lines 4"
@@ -49,9 +51,9 @@ myLauncher = "rofi -show drun -lines 4"
 myBorderWidth :: Dimension
 myBorderWidth = 2
 myBorderColor :: String
-myBorderColor = "#111111"
+myBorderColor = "#161C1F"
 myBorderActiveColor :: String
-myBorderActiveColor = "#9c71C7"
+myBorderActiveColor = "#E6A3DC"
 
 -- Polybar ---------------------------------------------------------------------
 
@@ -115,26 +117,56 @@ checkDialog = ask >>= \w -> liftX $ do
                   Just [r] -> return $elem (fromIntegral r) [dialog]
                   _ -> return False
 
+checkNotif :: Query Bool
+checkNotif = ask >>= \w -> liftX $ do
+               a <- getAtom "_NET_WM_WINDOW_TYPE"
+               dialog <- getAtom "_NET_WM_WINDOW_TYPE_NOTIFICATION"
+               mbr <- getProp a w
+               case mbr of
+                 Just [r] -> return $elem (fromIntegral r) [dialog]
+                 _ -> return False
+
+
 myManageHook :: ManageHook
 myManageHook = composeAll
   [ checkDialog --> doCenterFloat
+  , checkNotif --> doSideFloat NE
   , className =? "Pavucontrol" --> doFloat
   , manageDocks
   ]
 
-manageScratchpad :: ManageHook
-manageScratchpad = scratchpadManageHook (W.RationalRect l t w h)
+-- Scratchpads -----------------------------------------------------------------
+
+myScratchpads =
+  -- Run nmcli in alacritty
+  [ NS "nmcli" "alacritty -t 'nmtui' -e 'nmtui'"
+      (title =? "nmtui")
+      (customFloating $ center 0.5 0.5)
+
+  -- Run gotop
+  , NS "gotop" "alacritty --class gotop -e gotop"
+      (resource =? "gotop")
+      (customFloating $ W.RationalRect 0.15 0.2 0.7 0.7)
+
+  -- Run pavucontrol
+  , NS "pavucontrol" "pavucontrol"
+      (className =? "pavucontrol")
+      (customFloating $ center 0.5 0.5)
+  ]
   where
-    h = 0.2     -- terminal height, 10%
-    w = 1       -- terminal width, 100%
-    t = 1 - h   -- distance from top edge, 90%
-    l = 1 - w   -- distance from left edge, 0%
+    role = stringProperty "WM_WINDOW_ROLE"
+    center w h = W.RationalRect ((1 - w) / 2) ((1 - h) / 2) w h
 
 -- Keybinds --------------------------------------------------------------------
 
-spotDbusSend :: String
-spotDbusSend = ("qdbus org.mpris.MediaPlayer2.spotify" ++
-  "/org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.")
+myKeygen :: String -> String -> String -> [(String, X ())]
+myKeygen t n w =
+  [ ("M-w " ++ t ++ " " ++ n, windows $ W.greedyView w)
+  , ("M-S-w " ++ t ++ " " ++ n, windows $ W.shift w)
+  ]
+
+devKeys :: [(String, X ())]
+devKeys = concat (map (\i -> myKeygen "d" i ("dev"++i)) (map show [1..9]))
 
 myKeys :: [(String, X ())]
 myKeys =
@@ -150,10 +182,13 @@ myKeys =
   , ("M-p", spawn myLauncher) -- Rofi
   , ("<Print>", spawn "flameshot gui")
 
+  , ("M-x b", spawn "chromium --profile-directory=\"Default\"")
+  , ("M-x w", spawn "chromium --profile-directory=\"work\"")
+  , ("M-x d", spawn "Discord")
+  , ("M-x s", spawn "spotify")
+  , ("M-x t", spawn "teams")
+
   -- Multimedia
-  , ("<XF86AudioPlay>", spawn (spotDbusSend ++ "PlayPause"))
-  , ("<XF86AudioNext>", spawn (spotDbusSend ++ "Next"))
-  , ("<XF86AudioPrev>", spawn (spotDbusSend ++ "Previous"))
   , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
   , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
   , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
@@ -161,10 +196,11 @@ myKeys =
   , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
 
   -- Scratchpads
-  , ("M-C-1", scratchPad)
-  ]
-  where
-    scratchPad = scratchpadSpawnActionTerminal myTerminal
+  , ("M-<F12>", namedScratchpadAction myScratchpads "nmcli")
+  , ("M-<F11>", namedScratchpadAction myScratchpads "gotop")
+  , ("M-<F10>", namedScratchpadAction myScratchpads "pavucontrol")
+  
+  ] ++ devKeys
 
 -- Entrypoint ------------------------------------------------------------------
 
@@ -178,7 +214,9 @@ myConfig = desktopConfig
   , focusedBorderColor = myBorderActiveColor
   , terminal = myTerminal
   , workspaces = myWorkspaces
-  , manageHook = myManageHook <+> manageHook desktopConfig
+  , manageHook = myManageHook <+>
+      namedScratchpadManageHook myScratchpads <+>
+      manageHook desktopConfig
 
   , startupHook = myStartupHook
   , logHook = polybarPP

@@ -20,5 +20,6 @@
 
       # util
       qt4
+      kdeconnect
     ];
 }

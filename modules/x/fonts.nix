@@ -32,6 +32,7 @@ in
 
         (unstable.nerdfonts.override { fonts = [
           "Terminus"
+          "ShareTechMono"
         ]; })
 
         unstable.inter

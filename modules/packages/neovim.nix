@@ -11,11 +11,11 @@
       (
         neovim.override {
           vimAlias = true;
-	  viAlias = true;
-	  configure = {
+          viAlias = true;
+          configure = {
             customRC = builtins.readFile ../../home/.config/nvim/init.vim;
-	  };
-	}
+          };
+        }
       )
     ];
 }
