@@ -1,12 +1,9 @@
-{ config, pkgs, vars, ... }:
+{ config, pkgs, vars, lib, ... }:
 {
   vars.user = "hayden";
   users.users.${vars.user} = {
     description = "Hayden Young";
   };
-
-  location.latitude = 53.32;
-  location.longitude = -1.34;
 
   networking.extraHosts =
     ''

@@ -25,6 +25,9 @@
     wantedBy = [ "multi-user.target" ];
   };
 
+  location.latitude = 53.32;
+  location.longitude = -1.34;
+
   users.defaultUserShell = pkgs.bash;
   i18n.defaultLocale = "en_GB.UTF-8";
 
