@@ -10,5 +10,4 @@
     permitRootLogin = lib.mkForce "yes";
     passwordAuthentication = lib.mkForce true;
   };
-  systemd.service.sshd.wantedBy = lib.mkForce [];
 }
