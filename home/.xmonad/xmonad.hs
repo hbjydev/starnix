@@ -11,6 +11,10 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.XPropManage
 import XMonad.ManageHook
 
+-- Layout ----------------------------------------------------------------------
+import XMonad.Layout.Gaps
+import XMonad.Layout.Spacing
+
 -- Utilities -------------------------------------------------------------------
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe)
@@ -51,7 +55,7 @@ myLauncher = "rofi -show drun -lines 4"
 myBorderWidth :: Dimension
 myBorderWidth = 2
 myBorderColor :: String
-myBorderColor = "#161C1F"
+myBorderColor = "#c0c0c0"
 myBorderActiveColor :: String
 myBorderActiveColor = "#E6A3DC"
 
@@ -202,6 +206,14 @@ myKeys =
   
   ] ++ devKeys
 
+
+-- Layout ----------------------------------------------------------------------
+
+-- myGaps = gaps [(U,12), (R,12), (L,12), (D,12)]
+mySpacing = spacingRaw False (Border 12 12 12 12) True (Border 12 12 12 12) True
+
+myLayoutHook = mySpacing $ layoutHook desktopConfig
+
 -- Entrypoint ------------------------------------------------------------------
 
 main :: IO ()
@@ -217,7 +229,8 @@ myConfig = desktopConfig
   , manageHook = myManageHook <+>
       namedScratchpadManageHook myScratchpads <+>
       manageHook desktopConfig
-
+  , layoutHook = myLayoutHook
   , startupHook = myStartupHook
   , logHook = polybarPP
   } `additionalKeysP` myKeys
+

@@ -93,8 +93,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }1
-  bspc {desktop -f,node -d} 'dv1'
+super + {_,shift + }{1..9}
+  bspc {desktop -f,node -d} {1..9}
 super + {_,shift + }2
   bspc {desktop -f,node -d} 'dv2'
 super + {_,shift + }3

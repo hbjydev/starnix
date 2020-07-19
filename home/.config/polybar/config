@@ -8,12 +8,12 @@ screenchange-reload = true
 ################################################################################
 
 [colors]
-background = #161c1f30
+background = #00000000
 background-transparent = #001c1f30
-background-alt = #0f0f0f
+background-alt = #CCACED
 background-alt-2 = #ff5fafcf
 foreground = #C0C0C0
-foreground-alt = #808080
+foreground-alt = #FFFFFF
 red = #EFA6A2
 green = #5ACCAF
 yellow = #E0AF85
@@ -36,7 +36,7 @@ offset-y = 0
 fixed-center = true
 monitor = ${env:MONITOR:}
 
-background = ${colors.background-alt}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 overline-size = 0

@@ -39,7 +39,7 @@ bspc rule -a ktranger desktop=msc
 bspc rule -a Spotify:spotify desktop=mus
 
 # Launch Startup Apps
-#dunst &
-#xsetroot -cursor_name left_ptr
-#sh ~/.config/polybar/launch.sh
-#sh ~/.fehbg
+dunst &
+xsetroot -cursor_name left_ptr &
+sh ~/.config/polybar/launch.sh &
+sh ~/.fehbg &

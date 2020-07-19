@@ -1,7 +1,7 @@
 font:
   size: 12.0
   normal:
-    family: ShureTechMono NF
+    family: monospace
     style: Regular
 
   bold:
@@ -12,6 +12,11 @@ font:
 
   bold_italic:
     style: Bold
+
+window:
+  padding:
+    x: 12
+    y: 12
 
 background_opacity: 0.94
 
@@ -64,3 +69,4 @@ colors:
     white: '#8f9192'
 
 draw_bold_text_with_bright_colors: true
+
