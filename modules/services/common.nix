@@ -6,7 +6,7 @@
     enable = true;
   };
 
-  services.nixosManual.showManual = false;
+  services.nixosManual.showManual = lib.mkForce false;
   services.gvfs.enable = lib.mkForce false;
 
   services.vnstat.enable = true;
