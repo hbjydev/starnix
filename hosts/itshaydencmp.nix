@@ -27,6 +27,7 @@
       ../modules/hardware/printer.nix
 
       ../modules/x/xmonad.nix
+#      ../modules/x/bspwm.nix
       ../modules/x/gnome3.nix
       ../modules/x/fonts.nix
       ../modules/packages/x-common.nix
@@ -39,12 +40,14 @@
       ../modules/packages/firefox.nix
       ../modules/packages/gnupg.nix
       ../modules/packages/pass.nix
+      ../modules/packages/vscode.nix
       
       ../modules/net/firewall-desktop.nix
       ../modules/net/sshd.nix
 
       ../modules/vm/docker.nix
       ../modules/vm/hypervisor.nix
+      ../modules/packages/kube.nix
     ];
 
     boot.loader.grub.backgroundColor = lib.mkForce "#161c1f";
