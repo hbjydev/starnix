@@ -49,5 +49,7 @@
     hd-gc = "sudo nix-collect-garbage --delete-older-than 30d";
     hd-inspect-store = "nix path-info -rSh /run/current-system | sort -k2h ";
     hd-sync = "cd /etc/nixos && git stash && git pull --rebase";
+
+    ssh = "TERM=xterm-256color ssh";
   };
 }

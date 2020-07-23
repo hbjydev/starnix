@@ -1,4 +1,10 @@
 { config, pkgs, ... }:
+let
+  unstable = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
+in
 {
   environment.systemPackages = with pkgs;
     [
@@ -18,5 +24,6 @@
       mkcert # SSL cert generation
       jetbrains.datagrip
       mariadb-client
+      unstable.azuredatastudio
     ];
 }
