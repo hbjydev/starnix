@@ -9,32 +9,32 @@
     ../users/shared.nix
     ../users/live-usb.nix
 
-    ../modules/sys/aliases.nix
-    ../modules/sys/scripts.nix
-    ../modules/sys/tty.nix
-    ../modules/sys/debug.nix
-    ../modules/sys/vars.nix
-    ../modules/sys/sysctl.nix
+    ../sys/aliases.nix
+    ../sys/scripts.nix
+    ../sys/tty.nix
+    ../sys/debug.nix
+    ../sys/vars.nix
+    ../sys/sysctl.nix
 
-    ../modules/services/common.nix
-    ../modules/services/x.nix
+    ../services/common.nix
+    ../services/x.nix
 
-    ../modules/x/xmonad.nix
-    ../modules/x/fonts.nix
-    ../modules/packages/x-common.nix
-    # ../modules/packages/x-extra.nix
+    ../x/xmonad.nix
+    ../x/fonts.nix
+    ../packages/x-common.nix
+    # ../packages/x-extra.nix
 
-    ../modules/packages/nonfree.nix
-    ../modules/packages/common.nix
-    ../modules/packages/neovim.nix
-    ../modules/packages/firefox.nix
-    ../modules/packages/pass.nix
+    ../packages/nonfree.nix
+    ../packages/common.nix
+    ../packages/neovim.nix
+    ../packages/firefox.nix
+    ../packages/pass.nix
 
-    ../modules/hardware/sound.nix
-    ../modules/hardware/power-management.nix
+    ../hardware/sound.nix
+    ../hardware/power-management.nix
 
-    ../modules/net/firewall-desktop.nix
-    ../modules/net/sshd.nix
+    ../net/firewall-desktop.nix
+    ../net/sshd.nix
   ];
 
   # isoImage.splashImage = lib.mkForce /etc/nixos/assets/grub_big.png;

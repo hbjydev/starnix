@@ -4,49 +4,49 @@
 
   imports =
     [
-      <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+      <nixpkgs/nix../installer/scan/not-detected.nix>
 
       ../users/shared.nix
       ../users/hayden.nix
 
-      ../modules/sys/aliases.nix
-      ../modules/sys/nix.nix
-      ../modules/sys/scripts.nix
-      ../modules/sys/sysctl.nix
-      ../modules/sys/tty.nix
-      ../modules/sys/vars.nix
+      ../sys/aliases.nix
+      ../sys/nix.nix
+      ../sys/scripts.nix
+      ../sys/sysctl.nix
+      ../sys/tty.nix
+      ../sys/vars.nix
 
-      ../modules/boot/grub.nix
+      ../boot/grub.nix
 
-      ../modules/services/common.nix
-      ../modules/services/avahi.nix
-      ../modules/services/keybase.nix
-      ../modules/services/x.nix
+      ../services/common.nix
+      ../services/avahi.nix
+      ../services/keybase.nix
+      ../services/x.nix
 
-      ../modules/x/gnome3.nix
-      ../modules/x/bspwm.nix
-      ../modules/x/xmonad.nix
-      ../modules/x/fonts.nix
-      ../modules/packages/x-common.nix
-      ../modules/packages/x-extra.nix
+      ../x/gnome3.nix
+      ../x/bspwm.nix
+      ../x/xmonad.nix
+      ../x/fonts.nix
+      ../packages/x-common.nix
+      ../packages/x-extra.nix
 
-      ../modules/packages/nonfree.nix
-      ../modules/packages/common.nix
-      ../modules/packages/dev.nix
-      ../modules/packages/neovim.nix
-      ../modules/packages/firefox.nix
-      ../modules/packages/gnupg.nix
-      ../modules/packages/pass.nix
+      ../packages/nonfree.nix
+      ../packages/common.nix
+      ../packages/dev.nix
+      ../packages/neovim.nix
+      ../packages/firefox.nix
+      ../packages/gnupg.nix
+      ../packages/pass.nix
 
-      ../modules/hardware/sound.nix
-      ../modules/hardware/printer.nix
-      ../modules/hardware/power-management.nix
+      ../hardware/sound.nix
+      ../hardware/printer.nix
+      ../hardware/power-management.nix
 
-      ../modules/net/firewall-desktop.nix
-      ../modules/net/sshd.nix
+      ../net/firewall-desktop.nix
+      ../net/sshd.nix
 
-      ../modules/vm/docker.nix
-      ../modules/vm/hypervisor.nix
+      ../vm/docker.nix
+      ../vm/hypervisor.nix
     ];
 
     boot.loader.grub.backgroundColor = lib.mkForce "#09090B";
