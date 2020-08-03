@@ -27,5 +27,8 @@ in
       # util
       qt4
       kdeconnect
+      samba
+      smbclient
+      cifs-utils
     ];
 }

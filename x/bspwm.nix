@@ -20,18 +20,6 @@
   console.useXkbConfig = true;
   services.xserver.gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
 
-  services.xserver = {
-    displayManager = {
-      defaultSession = lib.mkDefault "none+bspwm";
-    };
-
-    windowManager.bspwm = {
-      enable = true;
-      configFile = ../../home/.config/bspwm/bspwmrc;
-      sxhkd.configFile = ../../home/.config/sxhkd/sxhkdrc;
-    };
-  };
-  
   home-manager = {
     users.${vars.user} = {
       xsession.windowManager.bspwm = {
@@ -58,7 +46,8 @@
         };
 
         monitors = {
-         "DisplayPort-0" = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+         "HDMI-1" = [ "I" "II" "III" "IV" "V" ];
+         "HDMI-2" = [ "VI" "VII" "VIII" "IX" "X" ];
         };
 
         rules = {
@@ -93,8 +82,8 @@
         /run/current-system/sw/bin/feh --bg-fill --no-fehbg ~/.wallpaper
       '';
 
-      home.file.".config/polybar/launch.sh".source = ../../home/.config/polybar/launch.sh;
-      home.file.".config/polybar/config".source = ../../home/.config/polybar/config;
+      home.file.".config/polybar/launch.sh".source = ../home/.config/polybar/launch.sh;
+      home.file.".config/polybar/config".source = ../home/.config/polybar/config;
     };
   };
 

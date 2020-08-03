@@ -42,15 +42,15 @@
     users.${vars.user} = {
       xsession.windowManager.xmonad.enable = true;
       xsession.windowManager.xmonad.enableContribAndExtras = true;
-      xsession.windowManager.xmonad.config = lib.mkDefault ../../home/.xmonad/xmonad.hs;
+      xsession.windowManager.xmonad.config = lib.mkDefault ../home/.xmonad/xmonad.hs;
 
       home.file.".fehbg".text = ''
         #!/bin/sh
         /run/current-system/sw/bin/feh --bg-fill --no-fehbg ~/.wallpaper
       '';
 
-      home.file.".config/polybar/launch.sh".source = ../../home/.config/polybar/launch.sh;
-      home.file.".config/polybar/config".source = ../../home/.config/polybar/config;
+      home.file.".config/polybar/launch.sh".source = ../home/.config/polybar/launch.sh;
+      home.file.".config/polybar/config".source = ../home/.config/polybar/config;
     };
   };
 }

@@ -88,6 +88,9 @@ in
 
   environment.systemPackages = with pkgs;
     [
+      x11vnc # VNC Server
+      tigervnc # VNC Viewer
+
       xxkb
       xorg.xev
       xorg.xfd

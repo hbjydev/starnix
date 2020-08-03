@@ -1,10 +1,17 @@
 { config, lib, pkgs, vars, ... }:
-
+let
+  unstable = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
+in
 {
   home-manager = {
     useGlobalPkgs = true;
     users.${vars.user} = {
       programs.vscode.enable = true;
+
+      programs.vscode.package = unstable.vscode;
 
       programs.vscode.userSettings = {
         "editor.tabSize" = 2;

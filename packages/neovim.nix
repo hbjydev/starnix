@@ -13,7 +13,7 @@
           vimAlias = true;
           viAlias = true;
           configure = {
-            customRC = builtins.readFile ../../home/.config/nvim/init.vim;
+            customRC = builtins.readFile ../home/.config/nvim/init.vim;
           };
         }
       )

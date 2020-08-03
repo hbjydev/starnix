@@ -18,6 +18,10 @@
       imagemagick
       bat
 
+      # tools
+      taskwarrior
+      python37Packages.bugwarrior
+
       # monitoring
       bandwhich
       iperf3
