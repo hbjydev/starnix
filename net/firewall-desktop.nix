@@ -4,6 +4,15 @@
 
   networking.firewall.enable = lib.mkForce true;
   networking.firewall.allowedTCPPorts = [
+    # HTTP(s)
+    80 443
+
+    # MySQL
+    3306
+
+    # Remote Access
+    22 5901
+
     # Dev
     3000
     4000
