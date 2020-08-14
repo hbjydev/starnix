@@ -5,7 +5,7 @@ let
   mappings = builtins.readFile ./vimrc/mappings.vim;
   color = builtins.readFile ./vimrc/color.vim;
 
-  plug = import ./vimrc/plugins.nix;
+  plug = import ./vimrc/plugins.nix { inherit stdenv writeText; };
 in
 
 ''
