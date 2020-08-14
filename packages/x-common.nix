@@ -118,7 +118,7 @@ in
 
       discord
       teams
-      riot-desktop
+      element-desktop
 
       unstable.ant-dracula-theme
     ];
