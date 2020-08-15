@@ -104,7 +104,6 @@ in
       libnotify
       dunst
       polybar
-      nix-du
 
       glxinfo
       feh
