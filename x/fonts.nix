@@ -15,7 +15,7 @@ in
       hinting.enable = true;
       antialias = true;
       defaultFonts = {
-        monospace = [ "TerminessTTF Nerd Font Mono" ];
+        monospace = [ "Terminus" "ShureTechMono Nerd Font" ];
         sansSerif = [ "Roboto" ];
 	      serif = [ "Roboto Slab" ];
       };

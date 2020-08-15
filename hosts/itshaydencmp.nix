@@ -27,7 +27,7 @@
       ../hardware/printer.nix
 
       ../x/xmonad.nix
-#      ../x/bspwm.nix
+      ../x/bspwm.nix
       ../x/gnome3.nix
       ../x/fonts.nix
       ../packages/x-common.nix
@@ -40,7 +40,7 @@
       ../packages/firefox.nix
       ../packages/gnupg.nix
       ../packages/pass.nix
-      
+
       ../net/firewall-desktop.nix
       ../net/sshd.nix
 
@@ -68,17 +68,17 @@
 
     fileSystems."/" =
       { device = "/dev/disk/by-uuid/cd94bfbc-8b24-44a5-83d7-af9521c3fd13";
-        fsType = "ext4";
-      };
+      fsType = "ext4";
+    };
 
     fileSystems."/boot" =
       { device = "/dev/disk/by-uuid/8511-8521";
-        fsType = "vfat";
-      };
+      fsType = "vfat";
+    };
 
     swapDevices =
       [ { device = "/dev/disk/by-uuid/92b0b9b7-c797-460c-b6dd-faad7040a2bd"; }
-      ];
+    ];
 
     nix.maxJobs = lib.mkDefault 12;
 
@@ -86,4 +86,7 @@
       cpu.amd.updateMicrocode = true;
     };
     services.xserver.videoDrivers = [ "amdgpu" ];
-}
+
+    i18n.inputMethod.enabled = "ibus";
+    i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
+  }

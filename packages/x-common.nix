@@ -116,7 +116,7 @@ in
       
       arandr
 
-      discord
+      unstable.discord
       teams
       element-desktop
 

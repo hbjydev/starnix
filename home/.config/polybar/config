@@ -8,21 +8,21 @@ screenchange-reload = true
 ################################################################################
 
 [colors]
-background = #00000000
-background-transparent = #001c1f30
-background-alt = #CCACED
-background-alt-2 = #ff5fafcf
-foreground = #C0C0C0
+background = #0a0216
+background-transparent = #0a021600
+background-alt = #f98fd1
+background-alt-2 = #7635DE
+foreground = #FAF9FC
 foreground-alt = #FFFFFF
-red = #EFA6A2
-green = #5ACCAF
-yellow = #E0AF85
-blue = #A3B8EF
-purple = #CCACED
-aqua = #74C3E4
-orange = #E0AF85
-white = #C0C0C0
-grey = #808080
+red = #b20718
+green = #4bad00
+yellow = #938c00
+blue = #0029bb
+purple = #7635DE
+aqua = #3f9373
+orange = #FC7022
+white = #FAF9FC
+grey = #4f4958
 
 ################################################################################
 
