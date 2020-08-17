@@ -55,9 +55,9 @@ myLauncher = "rofi -show drun -lines 4"
 myBorderWidth :: Dimension
 myBorderWidth = 2
 myBorderColor :: String
-myBorderColor = "#c0c0c0"
+myBorderColor = "#2c2537"
 myBorderActiveColor :: String
-myBorderActiveColor = "#E6A3DC"
+myBorderActiveColor = "#7635de"
 
 -- Polybar ---------------------------------------------------------------------
 
@@ -210,7 +210,7 @@ myKeys =
 -- Layout ----------------------------------------------------------------------
 
 -- myGaps = gaps [(U,12), (R,12), (L,12), (D,12)]
-mySpacing = spacingRaw False (Border 12 12 12 12) True (Border 12 12 12 12) True
+mySpacing = spacingRaw False (Border 0 0 0 0) True (Border 0 0 0 0) True
 
 myLayoutHook = mySpacing $ layoutHook desktopConfig
 

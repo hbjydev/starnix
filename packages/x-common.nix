@@ -104,7 +104,6 @@ in
       libnotify
       dunst
       polybar
-      nix-du
 
       glxinfo
       feh
@@ -118,7 +117,7 @@ in
 
       unstable.discord
       teams
-      riot-desktop
+      element-desktop
 
       unstable.ant-dracula-theme
     ];

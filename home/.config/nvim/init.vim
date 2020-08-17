@@ -181,7 +181,6 @@ nnoremap <M-Down> :move +1<CR>
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>s :Rg<CR>
 
-
 " FZF fixes
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(

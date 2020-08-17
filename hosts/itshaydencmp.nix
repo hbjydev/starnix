@@ -27,7 +27,7 @@
       ../hardware/printer.nix
 
       ../x/xmonad.nix
-#      ../x/bspwm.nix
+      ../x/bspwm.nix
       ../x/gnome3.nix
       ../x/fonts.nix
       ../packages/x-common.nix
@@ -40,8 +40,7 @@
       ../packages/firefox.nix
       ../packages/gnupg.nix
       ../packages/pass.nix
-      ../packages/vscode.nix
-      
+
       ../net/firewall-desktop.nix
       ../net/sshd.nix
 
@@ -57,29 +56,29 @@
     networking.firewall.enable = lib.mkForce true;
     networking.networkmanager.enable = true;
     networking.useDHCP = false;
-    networking.interfaces.enp5s0.useDHCP = true;
-    networking.interfaces.wlp6s0.useDHCP = true;
+    networking.interfaces.enp40s0.useDHCP = true;
+    networking.interfaces.wlp39s0.useDHCP = true;
 
     boot.cleanTmpDir = true;
     boot.tmpOnTmpfs = true;
     boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-    boot.initrd.kernelModules = [ "dm-snapshot" ];
+    boot.initrd.kernelModules = [ ];
     boot.kernelModules = [ "kvm-amd" ];
     boot.extraModulePackages = [ ];
 
     fileSystems."/" =
-      { device = "/dev/disk/by-uuid/e17bd8dc-cf59-4cf9-a1ec-34aa3272aabc";
-        fsType = "ext4";
-      };
+      { device = "/dev/disk/by-uuid/cd94bfbc-8b24-44a5-83d7-af9521c3fd13";
+      fsType = "ext4";
+    };
 
     fileSystems."/boot" =
-      { device = "/dev/disk/by-uuid/5A22-E97D";
-        fsType = "vfat";
-      };
+      { device = "/dev/disk/by-uuid/8511-8521";
+      fsType = "vfat";
+    };
 
     swapDevices =
-      [ { device = "/dev/disk/by-uuid/7b3bbc83-ea9f-4c48-ba03-ad76eee93c0f"; }
-      ];
+      [ { device = "/dev/disk/by-uuid/92b0b9b7-c797-460c-b6dd-faad7040a2bd"; }
+    ];
 
     nix.maxJobs = lib.mkDefault 12;
 
@@ -87,4 +86,7 @@
       cpu.amd.updateMicrocode = true;
     };
     services.xserver.videoDrivers = [ "amdgpu" ];
-}
+
+    i18n.inputMethod.enabled = "ibus";
+    i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
+  }

@@ -10,8 +10,6 @@
         bitwarden
         honey
         https-everywhere
-        reddit-enhancement-suite
-        browserpass
       ];
 
       programs.firefox.profiles =
@@ -19,10 +17,10 @@
           "media.videocontrols.picture-in-picture.video-toggle.enabled" = true;
           "browser.aboutConfig.showWarning" = false;
           "browser.tabs.warnOnClose" = false;
-          "browser.startup.homepage" = "https://weekly.nixos.org/";
+          "browser.startup.homepage" = "https://reddit.com";
           "browser.urlbar.update1" = false;
-          "browser.urlbar.placeholderName" = "Google";
-          "browser.urlbar.placeholderName.private" = "Google";
+          "browser.urlbar.placeholderName" = "Search...";
+          "browser.urlbar.placeholderName.private" = "Search...";
           "browser.uidensity" = 1;
           "permissions.default.desktop-notification" = 2;
           "ui.context_menus.after_mouseup" = true;

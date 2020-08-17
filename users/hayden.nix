@@ -24,7 +24,7 @@
         userEmail = "hayden@itshayden.dev";
       };
 
-      home.file.".wallpaper".source = ../assets/wallpapers/main.png;
+      home.file.".wallpaper".source = ../assets/wallpapers/themer.png;
     };
   };
 }
