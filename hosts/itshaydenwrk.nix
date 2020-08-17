@@ -41,13 +41,13 @@
       ../packages/firefox.nix
       ../packages/gnupg.nix
       ../packages/pass.nix
-      ../packages/kube.nix
+#      ../packages/kube.nix
       
       ../net/firewall-desktop.nix
       ../net/sshd.nix
 
       ../vm/docker.nix
-      ../vm/hypervisor.nix
+#      ../vm/hypervisor.nix
     ];
 
     boot.loader.grub.backgroundColor = lib.mkForce "#161c1f";

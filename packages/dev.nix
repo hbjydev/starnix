@@ -25,5 +25,6 @@ in
       jetbrains.datagrip
       mariadb-client
       unstable.azuredatastudio
+      github-cli
     ];
 }

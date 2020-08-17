@@ -6,8 +6,6 @@
     enable = true;
   };
 
-  services.nixosManual.showManual = lib.mkForce false;
-
   services.vnstat.enable = true;
 
   services.fstrim.enable = true; # for ssds

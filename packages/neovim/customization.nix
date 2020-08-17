@@ -15,6 +15,7 @@ in
       { name = "coc-nvim"; }
       { name = "undotree"; }
       { name = "nerdtree"; }
+      { name = "fzfWrapper"; }
       { name = "fzf-vim"; }
       { name = "editorconfig-vim"; }
       { name = "vim-devicons"; }
