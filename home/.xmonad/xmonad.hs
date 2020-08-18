@@ -53,7 +53,7 @@ myLauncher :: String
 myLauncher = "rofi -show drun -lines 4"
 
 myBorderWidth :: Dimension
-myBorderWidth = 2
+myBorderWidth = 0
 myBorderColor :: String
 myBorderColor = "#2c2537"
 myBorderActiveColor :: String
@@ -210,7 +210,7 @@ myKeys =
 -- Layout ----------------------------------------------------------------------
 
 -- myGaps = gaps [(U,12), (R,12), (L,12), (D,12)]
-mySpacing = spacingRaw False (Border 0 0 0 0) True (Border 0 0 0 0) True
+mySpacing = spacingRaw False (Border 4 4 4 4) True (Border 4 4 4 4) True
 
 myLayoutHook = mySpacing $ layoutHook desktopConfig
 

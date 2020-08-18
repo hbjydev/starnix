@@ -17,6 +17,7 @@
       aria2
       imagemagick
       bat
+      tmux
 
       # tools
       taskwarrior

@@ -7,7 +7,8 @@ pkill -9 polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-polybar top >> /tmp/polybar1.log 2>&1 &
-polybar bottom >> /tmp/polybar2.log 2>&1 &
+polybar left >> /tmp/polybar1.log 2>&1 &
+polybar center >> /tmp/polybar2.log 2>&1 &
+polybar right >> /tmp/polybar2.log 2>&1 &
 
 echo "Bars launched..."

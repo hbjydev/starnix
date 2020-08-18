@@ -26,8 +26,9 @@
       ../hardware/sound.nix
       ../hardware/printer.nix
 
-      ../x/xmonad.nix
-      ../x/bspwm.nix
+      #../x/xmonad.nix
+      #../x/bspwm.nix
+      ../x/i3.nix
       ../x/gnome3.nix
       ../x/fonts.nix
       ../packages/x-common.nix

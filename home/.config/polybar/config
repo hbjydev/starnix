@@ -1,6 +1,6 @@
 [global/wm]
-margin-top = 0
-margin-bottom = 0
+margin-top = 16
+margin-bottom = 16
 
 [settings]
 screenchange-reload = true
@@ -8,12 +8,8 @@ screenchange-reload = true
 ################################################################################
 
 [colors]
-background = #0a0216
-background-transparent = #0a021600
-background-alt = #f98fd1
-background-alt-2 = #7635DE
-foreground = #FAF9FC
-foreground-alt = #FFFFFF
+background = #3Cffffff;
+foreground = #000000;
 red = #b20718
 green = #4bad00
 yellow = #938c00
@@ -27,12 +23,12 @@ grey = #4f4958
 ################################################################################
 
 [bar/base]
-font-0 = Terminus:size=14;0
+font-0 = Roboto:size=10;0
 font-1 = Siji:size=14;1
-width = 100%
-height = 24
-offset-x = 0
-offset-y = 0
+width = 33%
+height = 32
+offset-x = 8
+offset-y = 10
 fixed-center = true
 monitor = ${env:MONITOR:}
 
@@ -45,106 +41,37 @@ underline-size = 0
 border-bottom-size = 0
 border-bottom-color = #ffffff
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 4
+module-margin-right = 4
 
-radius = 0.0
-
-line-size = 3
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
+radius = 4.0
 
 tray-position = none
 tray-padding = 2
 tray-background = ${root.background}
-padding-left = 1
-padding-right = 1
 
 ################################################################################
 
-[bar/laptop-bottom]
-inherit = bar/base
-bottom = true
-
-modules-left = workspaces-xmonad
-modules-center = title-short
-modules-right = date
-
-[bar/bottom]
-inherit = bar/base
-bottom = true
-
-modules-left = workspaces-xmonad
-modules-center = title
-modules-right = date
-
-[bar/top]
+[bar/left]
 inherit = bar/base
 bottom = false
+#width = 52
+modules-left = date
 
-modules-left = volume
-modules-center = filesystem
-modules-right = wlp6s0 cpu memory
-
-[bar/laptop-top]
+[bar/center]
 inherit = bar/base
 bottom = false
+offset-x = 50%
+width = 159
+modules-center = date
 
-modules-left = volume
-modules-center = filesystem
-modules-right = wlp2s0 cpu memory
-
-################################################################################
-
-[module/title]
-type = internal/xwindow
-label-maxlen = 170
-
-[module/title-short]
-type = internal/xwindow
-label-maxlen = 70
-
-################################################################################
-
-[module/ewmh]
-type = internal/xworkspaces
-pin-workspaces = true
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
-
-format = <label-state>
-
-label-active = %{F#9c71C7}[%{F-}%name%%{F#9c71C7}]%{F-}
-
-label-urgent = " %name "
-label-urgent-foreground = #9c71C7
-
-label-empty = " %name% "
-label-empty-foreground = #838383
-
-[module/workspaces-xmonad]
-type = custom/script
-exec = tail -F /tmp/.xmonad-workspace-log
-exec-if = [ -f /tmp/.xmonad-workspace-log ]
-tail = true
-
-################################################################################
-
-[module/filesystem]
-type = internal/fs
-interval = 2
-
-mount-0 = /
-mount-1 = /home
-
-label-mounted = %{F#CCACED}%mountpoint%%{F-} %free%
-label-unmounted =
-label-unmounted-foreground = ${colors.foreground}
-
-################################################################################
+[bar/right]
+inherit = bar/base
+bottom = false
+#width = 52
+offset-x = 66%
+tray-position = right
+tray-backgroun = ${root.background}
 
 [module/battery]
 type = internal/battery
@@ -156,64 +83,17 @@ full-at = 98
 format-charging = %{F#CCACED}%{F-} <label-charging>
 format-discharging = %{F#CCACED}%{F-} <label-discharging>
 
-################################################################################
-
-[module/cpu]
-type = internal/cpu
-interval = 1
-format-prefix = "  %{F#CCACED}%{F-}"
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.grey}
-label = %percentage:3%%
-
-################################################################################
-
-[module/memory]
-type = internal/memory
-interval = 1
-format-prefix = "%{F#CCACED}%{F-}"
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.grey}
-label = %percentage_used:3%%
-
-################################################################################
-
-[module/eth]
-type = internal/network
-interface = enp4s0
-interval = 1.0
-label-connected = %{A1:sh ~/.config/polybar/local_and_public_ips.sh:} %{F#9c71C7}%{F-}%downspeed:8%   %{F#9c71C7}%{F-}%upspeed:8%%{A}
-
-################################################################################
-
-[module/wifi]
-type = internal/network
-interval = 1.0
-label-connected = %essid% %{A1:sh ~/.config/polybar/local_and_public_ips.sh:} %{F#9c71C7}%{F-}%downspeed:8%   %{F#9c71C7}%{F-}%upspeed:8%%{A}
-format-connected = <label-connected>
-
-[module/wlp2s0]
-inherit = module/wifi
-interface = wlp2s0
-
-[module/wlp6s0]
-inherit = module/wifi
-interface = wlp6s0
-
-################################################################################
-
 [module/date]
 type = internal/date
 interval = 1
 
-date = " %A %B %d"
+format-background = #50FFFFFF
+format-foreground = #000000
+
+date = %A %B %d
 time = %H:%M
 
-format-prefix = "%{F#9c71C7}%{F-}"
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.grey}
-
-label = %{F#6B5A68}%date%%{F-}  %time%
+label = %time%   %date%
 
 ################################################################################
 
