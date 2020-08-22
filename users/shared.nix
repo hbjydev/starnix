@@ -52,6 +52,7 @@
         enable = true;
         extraConfig = {
           "push" = { default = "current"; };
+          "pull" = { rebase = false; };
           "rerere" = { enabled = 1; };
           "core" = {
             excludesfile = "~/.gitignore";
