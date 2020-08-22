@@ -8,17 +8,17 @@ screenchange-reload = true
 ################################################################################
 
 [colors]
-background = #3Cffffff;
-foreground = #000000;
-red = #b20718
-green = #4bad00
-yellow = #938c00
-blue = #0029bb
-purple = #7635DE
-aqua = #3f9373
-orange = #FC7022
-white = #FAF9FC
+red = #f54456
+green = #91e827
+yellow = #d6cd00
+blue = #305dfb
+purple = #f97fd1
+aqua = #00c580
+white = #d8d6db
 grey = #4f4958
+
+background = #0a0216;
+foreground = ${colors.white};
 
 ################################################################################
 
@@ -35,18 +35,10 @@ monitor = ${env:MONITOR:}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 0
-underline-size = 0
-
-border-bottom-size = 0
-border-bottom-color = #ffffff
-
 module-margin-left = 4
 module-margin-right = 4
 
-radius = 4.0
-
-tray-position = none
+tray-position = center
 tray-padding = 2
 tray-background = ${root.background}
 

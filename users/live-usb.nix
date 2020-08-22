@@ -1,3 +1,8 @@
+#  _   ___  __
+# | |_| \ \/ / starnix -- (c) Hayden Young 2020
+# |  _  |\  /  https://github.com/itshaydendev/starnix
+# |_| |_|/_/   https://itshayden.dev
+# 
 # https://github.com/ksevelyar/idempotent-desktop/blob/master/docs/live-usb.md
 { config, pkgs, lib, vars, ... }:
 {

@@ -1,3 +1,9 @@
+#  _   ___  __
+# | |_| \ \/ / starnix -- (c) Hayden Young 2020
+# |  _  |\  /  https://github.com/itshaydendev/starnix
+# |_| |_|/_/   https://itshayden.dev
+# 
+
 set $super Mod4
 set $alt Mod1
 
@@ -44,8 +50,8 @@ bindsym $super+Shift+k move up
 bindsym $super+Shift+l move right
 
 # split control
-bindsym $super+Control+h split h # horizontal
-bindsym $super+Control+v split v # vertical
+bindsym $super+Control+h split h
+bindsym $super+Control+v split v
 
 # fullscreen current container
 bindsym $super+f fullscreen toggle
@@ -85,7 +91,7 @@ bindsym $super+Shift+0 move container to workspace 0
 bindsym $super+Shift+r restart
 
 # quit i3
-bindsym $super+Shift+q i3-msg exit
+bindsym $super+Shift+q exec i3-msg exit
 
 # resize window
 mode "resize" {
@@ -100,8 +106,8 @@ bindsym $super+r mode "resize"
 # window rules 
 for_window [class=".*"] border pixel 2
 
-# colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+# colours                   border  bg      text    indic   cborder
+client.focused              #4300ac #2f343f #d8dee8 #4300ac #d8dee8
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f

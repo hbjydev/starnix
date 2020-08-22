@@ -1,4 +1,4 @@
-# *NIX
+# starnix
 
 My personal [NixOS](https://nixos.org) configuration.
 
@@ -27,3 +27,14 @@ download & rebuild the latest changes from the git repo.
 - [Idempotent Desktop](https://github.com/ksevelyar/idempotent-desktop) for
   showing me 'the way' and introducing me to NixOS, and for inspiring 90% of
   the layout of this repository.
+
+---
+
+```
+#  _   ___  __
+# | |_| \ \/ / starnix -- (c) Hayden Young 2020
+# |  _  |\  /  https://github.com/itshaydendev/starnix
+# |_| |_|/_/   https://itshayden.dev
+# 
+```
+
