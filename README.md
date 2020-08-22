@@ -27,6 +27,13 @@ download & rebuild the latest changes from the git repo.
 - [Idempotent Desktop](https://github.com/ksevelyar/idempotent-desktop) for
   showing me 'the way' and introducing me to NixOS, and for inspiring 90% of
   the layout of this repository.
+- [Robert Helgesson](https://github.com/rycee) for making
+  [home-manager](https://github.com/rycee/home-manager), which allows me to do a
+  lot of personal filesystem-related stuff easily, as well as making app configs
+  easier!
+- [NixOS](https://nixos.org) for existing and allowing me to have this awesome,
+  reproducible setup on all of my computers. It makes my life a hell of a lot
+  easier when I need to reinstall or bootstrap a new PC.
 
 ---
 
