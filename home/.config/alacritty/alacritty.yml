@@ -20,13 +20,6 @@ window:
 
 background_opacity: 0.6
 
-dynamic_title: true
-
-window:
-  padding:
-    x: 16
-    y: 16
-
 cursor:
   style: Underline
 

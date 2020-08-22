@@ -12,11 +12,17 @@
     windowManager.i3 = {
       enable = true;
       configFile = ../home/.config/i3/config;
-      package = pkgs.i3-gaps-rounded;
+      package = pkgs.i3-gaps;
       extraPackages =
         with pkgs; [
-          (polybar.override { pulseSupport = true; }) lxqt.lxqt-policykit
-          libnotify dunst xfce.xfce4-settings
+          (polybar.override {
+            pulseSupport = true;
+            i3GapsSupport = true;
+          })
+          lxqt.lxqt-policykit
+          libnotify
+          dunst
+          xfce.xfce4-settings
         ];
     };
   };

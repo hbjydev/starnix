@@ -25,7 +25,7 @@ grey = #4f4958
 [bar/base]
 font-0 = Roboto:size=10;0
 font-1 = Siji:size=14;1
-width = 33%
+width = 100%
 height = 32
 offset-x = 8
 offset-y = 10
@@ -52,26 +52,12 @@ tray-background = ${root.background}
 
 ################################################################################
 
-[bar/left]
+[bar/main]
 inherit = bar/base
-bottom = false
+bottom = true
 #width = 52
-modules-left = date
-
-[bar/center]
-inherit = bar/base
-bottom = false
-offset-x = 50%
-width = 159
-modules-center = date
-
-[bar/right]
-inherit = bar/base
-bottom = false
-#width = 52
-offset-x = 66%
-tray-position = right
-tray-backgroun = ${root.background}
+modules-left = i3
+modules-right = volume date
 
 [module/battery]
 type = internal/battery
@@ -94,6 +80,15 @@ date = %A %B %d
 time = %H:%M
 
 label = %time%   %date%
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+
+layout-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = ${colors.background}
+label-focused-underline = #ffffff
 
 ################################################################################
 

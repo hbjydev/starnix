@@ -1,5 +1,6 @@
 self: super:
 {
+  # deprecated
   i3-gaps-rounded = super.i3-gaps.overrideAttrs (oldAttrs: rec {
     name = "i3-gaps-rounded";
 

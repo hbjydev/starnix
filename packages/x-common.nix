@@ -103,7 +103,6 @@ in
       rofi
       libnotify
       dunst
-      polybar
 
       glxinfo
       feh
