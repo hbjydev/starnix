@@ -115,8 +115,6 @@ in
       mpv
       vlc
 
-      chromium
-      
       arandr
 
       unstable.discord

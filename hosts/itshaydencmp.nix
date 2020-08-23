@@ -43,6 +43,7 @@
       ../packages/common.nix
       ../packages/dev.nix
       ../packages/neovim.nix
+      ../packages/chromium.nix
       ../packages/firefox.nix
       ../packages/gnupg.nix
       ../packages/pass.nix

@@ -7,7 +7,7 @@
 set $super Mod4
 set $alt Mod1
 
-font pango: Inter V 12
+font pango:Inter 12
 
 floating_modifier $super
 
@@ -28,6 +28,7 @@ bindsym $super+p exec rofi -show drun
 # common apps
 bindsym $super+Shift+d exec discord
 bindsym $super+Shift+b exec chromium
+bindsym $super+Print exec flameshot gui
 
 # volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -107,10 +108,10 @@ bindsym $super+r mode "resize"
 for_window [class=".*"] border pixel 2
 
 # colours                   border  bg      text    indic   cborder
-client.focused              #4300ac #2f343f #d8dee8 #4300ac #d8dee8
-client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background           #2f343f
+client.focused              #4300ac #0a0216 #d8d6db #7635de #4300ac
+client.focused_inactive     #0a0216 #0a0216 #d8d6db #0a0216 #0a0216
+client.unfocused            #0a0216 #0a0216 #d8d6db #0a0216 #0a0216
+client.urgent               #0a0216 #0a0216 #d8d6db #0a0216 #0a0216
+client.placeholder          #0a0216 #0a0216 #d8d6db #0a0216 #0a0216
+client.background           #0a0216
 

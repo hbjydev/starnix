@@ -29,7 +29,7 @@
         userEmail = "hayden@itshayden.dev";
       };
 
-      home.file.".wallpaper".source = ../assets/wallpapers/tenx.jpg;
+      home.file.".wallpaper".source = ../assets/wallpapers/S2qq8v4.jpeg;
     };
   };
 }

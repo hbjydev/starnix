@@ -44,6 +44,7 @@
       ../packages/dev.nix
       ../packages/neovim.nix
       ../packages/firefox.nix
+      ../packages/chromium.nix
       ../packages/gnupg.nix
       ../packages/pass.nix
 #      ../packages/kube.nix

@@ -3,5 +3,5 @@ configuration {
   theme: "./theme";
   lines: 4;
   show-icons: true;
-  font: "ShureTechMono Nerd Font 12";
+  font: "monospace 12";
 }

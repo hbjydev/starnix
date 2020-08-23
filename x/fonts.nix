@@ -20,7 +20,7 @@ in
       hinting.enable = true;
       antialias = true;
       defaultFonts = {
-        monospace = [ "ShureTechMono Nerd Font" ];
+        monospace = [ "Terminus" "Roboto Mono" ];
         sansSerif = [ "Roboto" ];
 	      serif = [ "Roboto Slab" ];
       };
@@ -28,17 +28,17 @@ in
 
     fonts = with pkgs;
       [
-        terminus_font
-        unifont
+        unstable.terminus_font
+        unstable.terminus_font_ttf
         noto-fonts-emoji
         corefonts
 
         siji
 
-        (unstable.nerdfonts.override { fonts = [
-          "Terminus"
-          "ShareTechMono"
-        ]; })
+#        (unstable.nerdfonts.override { fonts = [
+#          "Terminus"
+#          "ShareTechMono"
+#        ]; })
 
         unstable.inter
         open-sans
