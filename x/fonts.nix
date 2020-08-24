@@ -28,8 +28,7 @@ in
 
     fonts = with pkgs;
       [
-        unstable.terminus_font.otb
-        unstable.terminus_font_ttf
+        terminus_font.otb
         noto-fonts-emoji
         corefonts
 
