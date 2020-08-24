@@ -88,6 +88,9 @@
     ];
 
     nix.maxJobs = lib.mkDefault 12;
+#    nix.extraOptions = ''
+#      extra-platforms = aarch64-linux arm-linux
+#    '';
 
     hardware = {
       cpu.amd.updateMicrocode = true;
@@ -96,4 +99,6 @@
 
     i18n.inputMethod.enabled = "ibus";
     i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
+
+    boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   }

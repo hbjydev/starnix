@@ -28,12 +28,12 @@ in
 
     fonts = with pkgs;
       [
-        unstable.terminus_font
+        unstable.terminus_font.otb
         unstable.terminus_font_ttf
         noto-fonts-emoji
         corefonts
 
-        siji
+        siji.otb
 
 #        (unstable.nerdfonts.override { fonts = [
 #          "Terminus"
