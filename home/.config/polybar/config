@@ -33,8 +33,11 @@ monitor = ${env:MONITOR:}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-module-margin-left = 4
-module-margin-right = 4
+module-margin-left = 2
+module-margin-right = 2
+
+padding-left = 1
+padding-right = 2
 
 tray-position = center
 tray-padding = 2
@@ -70,12 +73,22 @@ label = %time%   %date%
 
 [module/i3]
 type = internal/i3
-pin-workspaces = true
 
-layout-focused = %index%
+label-focused = %name%
+label-focused-padding = 2
 label-focused-foreground = ${colors.purple}
-label-focused-background = ${colors.background}
-label-focused-underline = ${colors.purple}
+
+label-unfocused = %name%
+label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.foreground}
+
+label-visible = %name%
+label-visible-padding = 2
+label-visible-foreground = ${colors.grey}
+
+label-urgent = %name%
+label-urgent-padding = 2
+label-urgent-foreground = ${colors.red}
 
 ################################################################################
 
@@ -83,7 +96,7 @@ label-focused-underline = ${colors.purple}
 type = internal/pulseaudio
 interval = 1
 
-label-volume = "%{F#7635DE} %{F-}%percentage%%"
+label-volume = "%{A1:pavucontrol:}%{F#7635DE} %{F-}%percentage%%{A}"
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = "%{F#7635DE}%{F-} "

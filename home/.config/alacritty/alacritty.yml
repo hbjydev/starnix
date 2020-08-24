@@ -1,7 +1,7 @@
 font:
-  size: 12.0
+  size: 10.0
   normal:
-    family: ShureTechMono Nerd Font
+    family: monospace
     style: Regular
 
   bold:
